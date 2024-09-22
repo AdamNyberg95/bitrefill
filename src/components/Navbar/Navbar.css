@@ -51,3 +51,9 @@ nav {
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 10;
 }
+@media (max-width: 480px) {
+  /* For even smaller screens */
+  nav {
+    padding: 10px 20px;
+  }
+}

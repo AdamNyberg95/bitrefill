@@ -32,3 +32,11 @@ p {
   color: var(--gray-text);
   margin: 0;
 }
+@media (max-width: 480px) {
+  /* For even smaller screens */
+  .product-image {
+    width: 155px;
+    height: 111px;
+    border-radius: 2px;
+  }
+}

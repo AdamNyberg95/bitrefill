@@ -8,7 +8,11 @@ const Navbar: React.FC = () => {
   const { cartItems } = useCart();
   return (
     <nav>
-      <ul>
+      <ul
+        style={{
+          padding: '0',
+        }}
+      >
         <BitrefillLogo />
       </ul>
       <ul onClick={() => setCartOpen(!isCartOpen)} className="cartIcon">
