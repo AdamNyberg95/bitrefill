@@ -1,4 +1,3 @@
-// CartContext.tsx
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 // Define the types for the cart item and the context value
@@ -11,7 +10,7 @@ export interface CartItem {
     max: number;
   };
   currency: string;
-  quantity: number; // Add quantity field
+  quantity: number;
 }
 
 interface CartContextType {
@@ -55,7 +54,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
 
   const getTotalValue = () => {
     return cartItems.reduce((total, item) => {
-      return total + item.range.min * item.quantity; // Use the lowest value
+      return total + item.range.min * item.quantity;
     }, 0);
   };
 

@@ -13,6 +13,11 @@ interface CartItemProps {
 const CartItem: React.FC<CartItemProps> = ({ item }) => {
   const { removeFromCart } = useCart();
 
+  const handleRemoveClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    removeFromCart(item.id);
+  };
+
   const totalPrice = item.range.min * item.quantity;
 
   return (
@@ -49,10 +54,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
           }}
         >
           <p className="cart-item-quantity">{item.quantity}</p>{' '}
-          <div
-            className="cart-item-remove"
-            onClick={() => removeFromCart(item.id)}
-          >
+          <div className="cart-item-remove" onClick={handleRemoveClick}>
             <TrashcanIcon />
           </div>
         </div>
