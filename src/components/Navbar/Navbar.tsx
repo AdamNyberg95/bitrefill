@@ -6,6 +6,10 @@ import { useCart } from '../../context/CartContext';
 const Navbar: React.FC = () => {
   const [isCartOpen, setCartOpen] = useState(false);
   const { cartItems } = useCart();
+
+  const getTotalItemsCount = () => {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
+  };
   return (
     <nav>
       <ul
@@ -19,7 +23,7 @@ const Navbar: React.FC = () => {
         <div className="iconContainer">
           <CartIcon />
           {cartItems.length > 0 && (
-            <span className="cart-count">{cartItems.length}</span>
+            <span className="cart-count">{getTotalItemsCount()}</span>
           )}
         </div>
         <p className="cart">Cart</p>
